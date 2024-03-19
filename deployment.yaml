@@ -1,10 +1,10 @@
 
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: go-server
-  #namespace: go
+  # namespace: go
   labels:
     app: goapi
 spec:
@@ -30,7 +30,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: go-service
-  #namespace: go
+  # namespace: go
 spec:
   selector:
     app: goapi
@@ -42,16 +42,16 @@ spec:
 
 
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Ingress
 metadata:
-  #namespace: go
+  # namespace: go
   name: go-ingress
   annotations:
     allow.http: "false"
 spec:
   rules:
-  - host: rancher.cofin.com.br/go
+  - host: go.rancher.cofin.com.br
     http:
       paths:
         - path: /
