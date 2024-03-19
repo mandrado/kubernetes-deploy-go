@@ -12,16 +12,18 @@ spec:
   selector:
     matchLabels:
       app: goapi
+      version: v1
   template:
     metadata:
       labels:
         app: goapi
+        version: v1        
     spec:
       imagePullSecrets:
       - name: pipeline-docker-registry
       containers:
       - name: goapi
-        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}:v1
         ports:
         - containerPort: 80
 
