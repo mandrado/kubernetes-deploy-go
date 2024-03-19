@@ -51,7 +51,7 @@ metadata:
     allow.http: "false"
 spec:
   rules:
-  - host: go.rancher.cofin.com.br
+  - host: rancher.cofin.com.br/go
     http:
       paths:
         - path: /
